@@ -1,3 +1,5 @@
+use rusqlite::{Connection, Result};
+
 fn main() {
-    println!("Hello, world!");
+    let conn = Connection::open("cats.db");
 }
