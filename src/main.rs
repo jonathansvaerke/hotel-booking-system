@@ -1,13 +1,57 @@
 use rusqlite::{Connection, Result};
+use std::io;
 
 fn main() -> Result<()> {
     init_database()?;
+
+    println!("HBS Online");
+    loop {
+        let command = get_input("Command > ");
+        match command.as_str() {
+            "addroom" | "ar" => add_room(),
+            "addguest" | "ag" => add_guest(),
+            "exit" | "quit" | "q" => break,
+            "help" | "h" => help(),
+            _ => println!("Unknown command"),
+        }
+    }
+
     Ok(())
 }
 
-fn add_room() {}
+fn add_room() {
+    let _number = get_input("  Room number > ");
+    let _class = get_input("  Room class > ");
+    let _capacity = get_input("  Room capacity > ");
+    let _price: i32 = get_input("  Room price > ")
+        .parse()
+        .expect("Failed integer conversion");
+    //     conn.execute(
+    //         "INSERT INTO rooms (number, class, capacity, price)
+    //         VALUES (?1, ?2, ?3, ?4)",
+    //         "",
+    //     )
+    println!("  Room added");
+}
 
-fn add_guest() {}
+fn add_guest() {
+    let _first_name = get_input("  First name > ");
+    let _last_name = get_input("  Last name > ");
+    let _email = get_input("  Email > ");
+    let _phone = get_input("  Phone number > ");
+    //     conn.execute(
+    //         "INSERT INTO rooms (number, class, capacity, price)
+    //         VALUES (?1, ?2, ?3, ?4)",
+    //         "",
+    //     )
+    println!("  Guest added")
+}
+
+fn help() {
+    // Show documentation
+    println!("<Documentation>");
+    println!("Skill issue - get better");
+}
 
 fn init_database() -> Result<()> {
     let conn = Connection::open("hotel-database.db")?;
@@ -49,4 +93,13 @@ fn init_database() -> Result<()> {
     )?;
 
     Ok(())
+}
+
+fn get_input(command: &str) -> String {
+    let mut input = String::new();
+    eprint!("{}", command);
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Failed to read input");
+    input.trim().to_string()
 }
