@@ -4,6 +4,10 @@ mod commands;
 mod database;
 mod utilities;
 
+/*
+    To see all entries in table > SELECT * FROM table_name;
+*/
+
 fn main() -> Result<()> {
     let conn = database::init_database()?;
 
@@ -15,6 +19,7 @@ fn main() -> Result<()> {
             "removeguest" | "rg" => commands::remove_guest(&conn)?,
             "addroom" | "ar" => commands::add_room(&conn)?,
             "removeroom" | "rr" => commands::remove_room(&conn)?,
+            "show" | "s" => commands::show(&conn)?,
             "exit" | "quit" | "q" => break,
             "help" | "h" => commands::help(),
             _ => println!("Unknown command"),
