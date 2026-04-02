@@ -1,4 +1,4 @@
-use rusqlite::{Connection, Result};
+use rusqlite::{types::ValueRef, Connection, Result};
 
 use crate::utilities::{get_int, get_string};
 
@@ -7,12 +7,14 @@ pub fn add_guest(conn: &Connection) -> Result<()> {
     let last_name = get_string("  Last name > ");
     let email = get_string("  Email > ");
     let phone = get_string("  Phone number > ");
-    conn.execute(
+    match conn.execute(
         "INSERT INTO guests (first_name, last_name, email, phone)
             VALUES (?1, ?2, ?3, ?4)",
         [&first_name, &last_name, &email, &phone],
-    )?;
-    println!("  Guest {} {} added", first_name, last_name);
+    ) {
+        Ok(_) => println!("    Guest added successfully"),
+        Err(e) => println!("    Error whille adding guest: {}", e),
+    }
     Ok(())
 }
 
@@ -22,18 +24,24 @@ pub fn remove_guest(conn: &Connection) -> Result<()> {
         match remove_type.as_str() {
             "e" => {
                 let email = get_string("  Email > ");
-                conn.execute("DELETE FROM guests WHERE email = ?1", [&email])?;
-                println!("  Guest removed");
+                match conn.execute("DELETE FROM guests WHERE email = ?1", [&email]) {
+                    Ok(0) => println!("   No guest found with that email"),
+                    Ok(_) => println!("   Guest removed"),
+                    Err(e) => println!("   Error removing guest: {}", e),
+                }
                 break;
             }
             "p" => {
                 let phone = get_string("  Phone number > ");
-                conn.execute("DELETE FROM guests WHERE phone = ?1", [&phone])?;
-                println!("  Guest removed");
+                match conn.execute("DELETE FROM guests WHERE email = ?1", [&phone]) {
+                    Ok(0) => println!("   No guest found with that phone number"),
+                    Ok(_) => println!("   Guest removed"),
+                    Err(e) => println!("   Error removing guest: {}", e),
+                }
                 break;
             }
             "exit" => break,
-            _ => println!("Unknown command. Please type e or t"),
+            _ => println!("Unknown command. Please type e or p"),
         };
     }
     Ok(())
@@ -44,43 +52,53 @@ pub fn add_room(conn: &Connection) -> Result<()> {
     let class: u32 = get_int("  Room class > ");
     let capacity: u32 = get_int("  Room capacity > ");
     let price: u32 = get_int("  Room price > ");
-
-    conn.execute(
+    match conn.execute(
         "INSERT INTO rooms (number, class, capacity, price)
             VALUES (?1, ?2, ?3, ?4)",
-        (&number, &class, &capacity, &price),
-    )?;
-    println!("  Room added");
+        [&number, &class, &capacity, &price],
+    ) {
+        Ok(_) => println!("    Room added successfully"),
+        Err(e) => println!("    Error removing room: {}", e),
+    }
     Ok(())
 }
 
 pub fn remove_room(conn: &Connection) -> Result<()> {
     let number: u32 = get_int("  Room number > ");
-    conn.execute("DELETE FROM rooms WHERE number = ?1", [&number])?;
-    println!(" Room {} removed", number);
+    match conn.execute("DELETE FROM rooms WHERE number = ?1", [&number]) {
+        Ok(0) => println!("    No room found with number with room number"),
+        Ok(_) => println!("    Room removed"),
+        Err(e) => println!("    Error removing room: {}", e),
+    }
     Ok(())
 }
 
 pub fn show(conn: &Connection) -> Result<()> {
     loop {
         let table = get_string("Table name > ");
-
-        match table.as_str() {
-            "guests" => {
-                conn.execute("SELECT * FROM guests", [])?;
-                break;
+        let query = match table.as_str() {
+            "guests" => "SELECT FROM * guests",
+            "rooms" => "SELECT FROM * rooms",
+            "bookings" => "SELECT FROM * bookings",
+            "exit" => break,
+            _ => {
+                println!("Unknown table. Choose between guests, rooms or bookings");
+                continue;
             }
-            "rooms" => {
-                conn.execute("SELECT * FROM rooms", [])?;
-                break;
-            }
-            "bookings" => {
-                conn.execute("SELECT * FROM guests", [])?;
-                break;
-            }
-            _ => println!("Unknown table name. Choose between guests, rooms or bookings"),
+        };
+        // Run print_table(), but if this returns an error handle it.
+        if let Err(e) = print_table(&conn, query) {
+            println!("Error showing table: {}", e);
         }
     }
+    Ok(())
+}
+
+pub fn print_table(conn: &Connection, query: &str) -> Result<()> {
+    let mut stmt = conn.prepare(query)?;
+    let col_names: Vec<String> = stmt.column_names().iter().map(|x| x.to_string()).collect();
+    println!("{}", col_names.join(" | "));
+    println!("{}", "-".repeat(col_names.len() * 15));
     Ok(())
 }
 
