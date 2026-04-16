@@ -1,6 +1,9 @@
-use rusqlite::{types::ValueRef, Connection, Result};
+use rusqlite::{Connection, Result};
 
-use crate::utilities::{get_int, get_string};
+use crate::{
+    query::{query_guests, query_rooms},
+    utilities::{get_int, get_string},
+};
 
 pub fn add_guest(conn: &Connection) -> Result<()> {
     let first_name = get_string("  First name > ");
@@ -76,29 +79,21 @@ pub fn remove_room(conn: &Connection) -> Result<()> {
 pub fn show(conn: &Connection) -> Result<()> {
     loop {
         let table = get_string("Table name > ");
-        let query = match table.as_str() {
-            "guests" => "SELECT FROM * guests",
-            "rooms" => "SELECT FROM * rooms",
-            "bookings" => "SELECT FROM * bookings",
+        match table.as_str() {
+            "guests" => query_guests(conn)?,
+            "rooms" => query_rooms(conn)?,
+            "bookings" => (),
             "exit" => break,
             _ => {
-                println!("Unknown table. Choose between guests, rooms or bookings");
+                println!("Unknown table. Choose between guests, rooms, bookings or exit");
                 continue;
             }
         };
         // Run print_table(), but if this returns an error handle it.
-        if let Err(e) = print_table(&conn, query) {
-            println!("Error showing table: {}", e);
-        }
+        // if let Err(e) = print_table(&conn, query) {
+        //     println!("Error showing table: {}", e);
+        // }
     }
-    Ok(())
-}
-
-pub fn print_table(conn: &Connection, query: &str) -> Result<()> {
-    let mut stmt = conn.prepare(query)?;
-    let col_names: Vec<String> = stmt.column_names().iter().map(|x| x.to_string()).collect();
-    println!("{}", col_names.join(" | "));
-    println!("{}", "-".repeat(col_names.len() * 15));
     Ok(())
 }
 

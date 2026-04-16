@@ -2,6 +2,8 @@ use rusqlite::Result;
 
 mod commands;
 mod database;
+mod query;
+mod structs;
 mod utilities;
 
 /*
