@@ -76,6 +76,40 @@ pub fn remove_room(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
+pub fn add_booking(conn: &Connection) -> Result<()> {
+    let room_number = get_int("    Room number > ");
+    let room_id: i64 = conn.query_row(
+        "SELECT id FROM rooms WHERE number = ?1",
+        [room_number],
+        |row| row.get(0),
+    )?;
+
+    let guest_phone = get_string("    Guest phone number > ");
+    let guest_id: i64 = conn.query_row(
+        "SELECT id FROM guests WHERE phone = ?1",
+        [guest_phone],
+        |row| row.get(0),
+    )?;
+
+    println!("Date format: <YEAR-MM-DD>");
+    let start_date = get_string("    Start date > ");
+    let end_date = get_string("    End date > ");
+
+    match conn.execute(
+        "INSERT INTO bookings (room_id, guest_id, start_date, end_date) VALUES (?1, ?2, ?3, ?4)",
+        (&room_id, &guest_id, &start_date, &end_date), // Tuples are being used here because, the data have different types.
+    ) {
+        Ok(_) => println!("Booking created successfully"),
+        Err(e) => println!("Error creating booking: {}", e),
+    }
+
+    Ok(())
+}
+
+pub fn _remove_booking(_conn: &Connection) -> Result<()> {
+    Ok(())
+}
+
 pub fn show(conn: &Connection) -> Result<()> {
     loop {
         let table = get_string("Table name > ");
