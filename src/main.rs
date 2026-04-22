@@ -22,6 +22,7 @@ fn main() -> Result<()> {
             "addroom" | "ar" => commands::add_room(&conn)?,
             "removeroom" | "rr" => commands::remove_room(&conn)?,
             "addbooking" | "ab" => commands::add_booking(&conn)?,
+            "removebooking" | "rb" => commands::remove_booking(&conn)?,
             "show" | "s" => commands::show(&conn)?,
             "exit" | "quit" | "q" => break,
             "help" | "h" => commands::help(),

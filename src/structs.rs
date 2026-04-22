@@ -13,3 +13,10 @@ pub struct Room {
     pub capacity: u32,
     pub price: f64,
 }
+
+pub struct Booking {
+    pub room_id: u32,
+    pub guest_id: u32,
+    pub start_date: String,
+    pub end_date: String,
+}

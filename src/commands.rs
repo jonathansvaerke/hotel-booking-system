@@ -1,7 +1,7 @@
 use rusqlite::{Connection, Result};
 
 use crate::{
-    query::{query_guests, query_rooms},
+    query::{query_bookings, query_guests, query_rooms},
     utilities::{get_int, get_string},
 };
 
@@ -106,7 +106,7 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-pub fn _remove_booking(_conn: &Connection) -> Result<()> {
+pub fn remove_booking(_conn: &Connection) -> Result<()> {
     Ok(())
 }
 
@@ -116,18 +116,15 @@ pub fn show(conn: &Connection) -> Result<()> {
         match table.as_str() {
             "guests" => query_guests(conn)?,
             "rooms" => query_rooms(conn)?,
-            "bookings" => (),
+            "bookings" => query_bookings(conn)?,
             "exit" => break,
             _ => {
                 println!("Unknown table. Choose between guests, rooms, bookings or exit");
                 continue;
             }
         };
-        // Run print_table(), but if this returns an error handle it.
-        // if let Err(e) = print_table(&conn, query) {
-        //     println!("Error showing table: {}", e);
-        // }
     }
+
     Ok(())
 }
 
