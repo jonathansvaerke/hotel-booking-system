@@ -13,7 +13,7 @@ mod utilities;
 fn main() -> Result<()> {
     let conn = database::init_database()?;
 
-    println!("HBS Online");
+    println!("HBS Online - For help type 'help'");
     loop {
         let command = utilities::get_string("Command > ");
         match command.as_str() {
