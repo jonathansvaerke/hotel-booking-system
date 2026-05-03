@@ -16,7 +16,7 @@ pub fn add_guest(conn: &Connection) -> Result<()> {
         [&first_name, &last_name, &email, &phone],
     ) {
         Ok(_) => println!("    Guest added successfully"),
-        Err(e) => println!("    Error whille adding guest: {}", e),
+        Err(e) => println!("    Error while adding guest: {}", e),
     }
     Ok(())
 }
@@ -130,11 +130,13 @@ pub fn show(conn: &Connection) -> Result<()> {
 
 pub fn help() {
     // Show documentation
-    println!("Skill issue - get better. But just because you asked nicely ;)"); // Remove this
-    println!("The following commands are available:");
-    println!("  - addguest or ag | Use this command to add a guest to the database");
-    println!("  - removeguest or rg | Use this command to remove a guest from the database");
-    println!("  - addroom or ar | Use this command to add a room to the database");
-    println!("  - removeroom or rr | Use this command to remove a room from the database");
-    println!("  - exit or q | Use this command to exit the program")
+    println!(
+        "Skill issue - get better. But just because you asked nicely ;)\n
+The following commands are available:\n
+    - addguest or ag | Use this command to add a guest to the database\n
+    - removeguest or rg | Use this command to remove a guest from the database\n
+    - addroom or ar | Use this command to add a room to the database\n
+    - removeroom or rr | Use this command to remove a room from the database\n
+    - exit or q | Use this command to exit the program"
+    );
 }
