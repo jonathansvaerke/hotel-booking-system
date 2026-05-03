@@ -1,0 +1,190 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ox6voPBi2kLMn7-Z3LfR">
+    <mxGraphModel dx="2351" dy="1376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="miFZzy46oqGBkciue07m-3" edge="1" parent="1" source="miFZzy46oqGBkciue07m-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165.51724137931024" y="199.9999999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-5" edge="1" parent="1" source="miFZzy46oqGBkciue07m-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="40" y="300" />
+              <mxPoint x="40" y="240" />
+              <mxPoint x="160" y="240" />
+            </Array>
+            <mxPoint x="90" y="280" as="sourcePoint" />
+            <mxPoint x="160" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-7" connectable="0" parent="miFZzy46oqGBkciue07m-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nej" vertex="1">
+          <mxGeometry relative="1" x="-0.7553" y="1" as="geometry">
+            <mxPoint x="-35" y="-31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-8" edge="1" parent="1" source="miFZzy46oqGBkciue07m-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="166" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-9" connectable="0" parent="miFZzy46oqGBkciue07m-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ja" vertex="1">
+          <mxGeometry relative="1" x="-0.0521" y="1" as="geometry">
+            <mxPoint x="-1" y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-2" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Er&amp;nbsp;&lt;i&gt;m &amp;lt; n&lt;/i&gt;" vertex="1">
+          <mxGeometry height="80.03" width="125" x="103.01" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-11" edge="1" parent="1" source="miFZzy46oqGBkciue07m-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165.4949999999999" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="I tabellen for bookinger, hent alle start- og slutdatoer for eksisterende bookinger med query_map()" vertex="1">
+          <mxGeometry height="90" width="241.13" x="44.940000000000005" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-13" edge="1" parent="1" source="miFZzy46oqGBkciue07m-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-14" connectable="0" parent="miFZzy46oqGBkciue07m-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nej" vertex="1">
+          <mxGeometry relative="1" x="-0.0977" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-43" edge="1" parent="1" source="miFZzy46oqGBkciue07m-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165.50000000000023" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-44" connectable="0" parent="miFZzy46oqGBkciue07m-43" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ja" vertex="1">
+          <mxGeometry relative="1" x="-0.2331" y="-1" as="geometry">
+            <mxPoint x="1" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-12" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="&lt;div&gt;Har du prøvet alle bookingerne?&lt;/div&gt;&lt;div&gt;(For loop)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="165.5" x="82.75" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-16" edge="1" parent="1" source="miFZzy46oqGBkciue07m-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="610" />
+            </Array>
+            <mxPoint x="550" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-17" connectable="0" parent="miFZzy46oqGBkciue07m-16" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;_&amp;nbsp;&amp;amp; slut &amp;lt;=&amp;nbsp;&lt;i&gt;m&amp;nbsp;&lt;/i&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1855" as="geometry">
+            <mxPoint x="-17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-19" edge="1" parent="1" source="miFZzy46oqGBkciue07m-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="680" />
+            </Array>
+            <mxPoint x="600" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-23" connectable="0" parent="miFZzy46oqGBkciue07m-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;start =&amp;gt; &lt;i&gt;n&lt;/i&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;i&gt;_&amp;nbsp;&lt;/i&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0957" y="-2" as="geometry">
+            <mxPoint x="43" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-26" edge="1" parent="1" source="miFZzy46oqGBkciue07m-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="760" />
+            </Array>
+            <mxPoint x="375" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-28" connectable="0" parent="miFZzy46oqGBkciue07m-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;start &amp;lt;=&amp;nbsp;&lt;i&gt;m&lt;/i&gt;&amp;nbsp;&amp;amp; slut &amp;gt;=&amp;nbsp;&lt;i&gt;n&lt;/i&gt;&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="0.5969" y="-1" as="geometry">
+            <mxPoint x="-18" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-34" edge="1" parent="1" source="miFZzy46oqGBkciue07m-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-35">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="840" />
+            </Array>
+            <mxPoint x="440" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-41" connectable="0" parent="miFZzy46oqGBkciue07m-34" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;Else&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="0.598" y="-2" as="geometry">
+            <mxPoint x="-5" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-15" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="match (start, slut)&amp;nbsp;" vertex="1">
+          <mxGeometry height="80" width="130" x="310" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-29" edge="1" parent="1" source="miFZzy46oqGBkciue07m-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="610" />
+              <mxPoint x="680" y="490" />
+            </Array>
+            <mxPoint x="170" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Reg. booking starter og slutter før ny." vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-30" edge="1" parent="1" source="miFZzy46oqGBkciue07m-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="680" />
+              <mxPoint x="680" y="640" />
+            </Array>
+            <mxPoint x="680" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Reg. booking starter og slutter efter ny." vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-50" edge="1" parent="1" source="miFZzy46oqGBkciue07m-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Reg. booking starter før ny og slutter efter.&lt;/div&gt;&lt;div&gt;Eller booking er identisk.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-49" edge="1" parent="1" source="miFZzy46oqGBkciue07m-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="840" />
+              <mxPoint x="680" y="890" />
+              <mxPoint x="165" y="890" />
+            </Array>
+            <mxPoint x="160" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Reg. booking blokerer ny booking." vertex="1">
+          <mxGeometry height="60" width="120" x="520" y="810.0000000000002" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-46" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Booking er gyldig og kan registreres." vertex="1">
+          <mxGeometry height="80" width="120" x="105.49" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-48" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Booking kan ikke gennemføres" vertex="1">
+          <mxGeometry height="80" width="120" x="105.49000000000001" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-52" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-47" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165.51724137931024" y="199.9999999999999" as="sourcePoint" />
+            <mxPoint x="166" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="miFZzy46oqGBkciue07m-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Lav booking på værelse &lt;i&gt;x&lt;/i&gt;, i tidsintervallet&amp;nbsp;&lt;i&gt;m&lt;/i&gt; til&amp;nbsp;&lt;i&gt;n&lt;/i&gt;" vertex="1">
+          <mxGeometry height="80" width="172.75" x="79.11" y="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
