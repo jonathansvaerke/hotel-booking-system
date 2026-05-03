@@ -59,6 +59,8 @@ pub fn query_bookings(conn: &Connection) -> Result<()> {
         })
     })?;
 
+    // The first part of the function retrives data from the bookings table. Then the second part retrives information about the guest and room.
+
     for booking in booking_iter {
         let booking = booking?;
 
@@ -68,6 +70,7 @@ pub fn query_bookings(conn: &Connection) -> Result<()> {
             |row| row.get(0),
         )?;
 
+        // The retrieval of guest information could be refactored by using query_row().
         let guest_first_name: String = conn.query_row(
             "SELECT first_name FROM guests WHERE id = ?1",
             [booking.guest_id],

@@ -22,8 +22,8 @@ pub fn add_guest(conn: &Connection) -> Result<()> {
 }
 
 pub fn remove_guest(conn: &Connection) -> Result<()> {
-    let remove_type = get_string("Type e for email or p for phone number > ");
     loop {
+        let remove_type = get_string("Type e for email or p for phone number > ");
         match remove_type.as_str() {
             "e" => {
                 let email = get_string("  Email > ");
@@ -36,7 +36,7 @@ pub fn remove_guest(conn: &Connection) -> Result<()> {
             }
             "p" => {
                 let phone = get_string("  Phone number > ");
-                match conn.execute("DELETE FROM guests WHERE email = ?1", [&phone]) {
+                match conn.execute("DELETE FROM guests WHERE phone = ?1", [&phone]) {
                     Ok(0) => println!("   No guest found with that phone number"),
                     Ok(_) => println!("   Guest removed"),
                     Err(e) => println!("   Error removing guest: {}", e),
