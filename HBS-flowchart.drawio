@@ -1,28 +1,12 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="ox6voPBi2kLMn7-Z3LfR">
-    <mxGraphModel dx="2351" dy="1376" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="849" dy="506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="miFZzy46oqGBkciue07m-3" edge="1" parent="1" source="miFZzy46oqGBkciue07m-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-2">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="165.51724137931024" y="199.9999999999999" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="miFZzy46oqGBkciue07m-5" edge="1" parent="1" source="miFZzy46oqGBkciue07m-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="40" y="300" />
-              <mxPoint x="40" y="240" />
-              <mxPoint x="160" y="240" />
-            </Array>
-            <mxPoint x="90" y="280" as="sourcePoint" />
-            <mxPoint x="160" y="240" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="miFZzy46oqGBkciue07m-7" connectable="0" parent="miFZzy46oqGBkciue07m-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Nej" vertex="1">
-          <mxGeometry relative="1" x="-0.7553" y="1" as="geometry">
-            <mxPoint x="-35" y="-31" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-8" edge="1" parent="1" source="miFZzy46oqGBkciue07m-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-10">
@@ -33,6 +17,14 @@
         <mxCell id="miFZzy46oqGBkciue07m-9" connectable="0" parent="miFZzy46oqGBkciue07m-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ja" vertex="1">
           <mxGeometry relative="1" x="-0.0521" y="1" as="geometry">
             <mxPoint x="-1" y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Gj4XaNVwFS_2XZvwkcJ1-3" edge="1" parent="1" source="miFZzy46oqGBkciue07m-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-48">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="300" />
+              <mxPoint x="30" y="790" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-2" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Er&amp;nbsp;&lt;i&gt;m &amp;lt; n&lt;/i&gt;" vertex="1">
@@ -105,7 +97,7 @@
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-28" connectable="0" parent="miFZzy46oqGBkciue07m-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&amp;nbsp;start &amp;lt;=&amp;nbsp;&lt;i&gt;m&lt;/i&gt;&amp;nbsp;&amp;amp; slut &amp;gt;=&amp;nbsp;&lt;i&gt;n&lt;/i&gt;&amp;nbsp;" vertex="1">
           <mxGeometry relative="1" x="0.5969" y="-1" as="geometry">
-            <mxPoint x="-18" y="-1" as="offset" />
+            <mxPoint x="-19" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-34" edge="1" parent="1" source="miFZzy46oqGBkciue07m-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="miFZzy46oqGBkciue07m-35">
@@ -153,7 +145,7 @@
             <mxPoint x="680" y="830" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="miFZzy46oqGBkciue07m-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Reg. booking starter før ny og slutter efter.&lt;/div&gt;&lt;div&gt;Eller booking er identisk.&lt;/div&gt;" vertex="1">
+        <mxCell id="miFZzy46oqGBkciue07m-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(default, #e01b24);" value="&lt;div&gt;Reg. booking starter før ny og slutter efter.&lt;/div&gt;&lt;div&gt;Eller booking er identisk.&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="520" y="730" as="geometry" />
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-49" edge="1" parent="1" source="miFZzy46oqGBkciue07m-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-48">
@@ -174,12 +166,6 @@
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-48" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Booking kan ikke gennemføres" vertex="1">
           <mxGeometry height="80" width="120" x="105.49000000000001" y="750" as="geometry" />
-        </mxCell>
-        <mxCell id="miFZzy46oqGBkciue07m-52" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="miFZzy46oqGBkciue07m-47" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="165.51724137931024" y="199.9999999999999" as="sourcePoint" />
-            <mxPoint x="166" y="270" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="miFZzy46oqGBkciue07m-47" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Lav booking på værelse &lt;i&gt;x&lt;/i&gt;, i tidsintervallet&amp;nbsp;&lt;i&gt;m&lt;/i&gt; til&amp;nbsp;&lt;i&gt;n&lt;/i&gt;" vertex="1">
           <mxGeometry height="80" width="172.75" x="79.11" y="140" as="geometry" />
