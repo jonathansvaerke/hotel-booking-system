@@ -129,7 +129,7 @@ pub fn show(conn: &Connection) -> Result<()> {
 }
 
 pub fn help() {
-    // Show documentation
+    // Show documentation. This could also be refactored to look more nicely, and retain performance by using a BuffWriter.
     println!(
         "Skill issue - get better. But just because you asked nicely ;)\n
 The following commands are available:\n
