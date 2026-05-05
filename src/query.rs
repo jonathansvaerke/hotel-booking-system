@@ -7,6 +7,7 @@ pub fn query_guests(conn: &Connection) -> Result<()> {
     let mut stmt = conn.prepare("SELECT id, first_name, last_name, email, phone FROM guests")?;
     let guest_iter = stmt.query_map([], |row| {
         Ok(Guest {
+            // The Ok means that the value is a Ok (from the Result type), and it should contain the type Guest
             //id: row.get(0)?,
             first_name: row.get(1)?,
             last_name: row.get(2)?,
