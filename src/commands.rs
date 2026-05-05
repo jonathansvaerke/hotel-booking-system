@@ -82,14 +82,14 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
         "SELECT id FROM rooms WHERE number = ?1",
         [room_number],
         |row| row.get(0),
-    )?;
+    )?; // In this part of the function, one could also ask whether to use email or phone number. Like in removeguest.
 
     let guest_phone = get_string("    Guest phone number > ");
     let guest_id: i64 = conn.query_row(
         "SELECT id FROM guests WHERE phone = ?1",
         [guest_phone],
         |row| row.get(0),
-    )?;
+    )?; // This could be made better by using a match-statement. Same with the above. Remember to add case Ok(0) for 'user not found error'
 
     println!("Date format: <YEAR-MM-DD>");
     let start_date = get_string("    Start date > ");
@@ -107,6 +107,8 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
 }
 
 pub fn remove_booking(_conn: &Connection) -> Result<()> {
+    /* Hent alle datoer på EN gæsts bookinger på ET rum. Sammen med datoerne, print booking id.
+    Derefter kan brugeren indtaste den korrekte booking id. Og databasen sletter booking med det id. */
     Ok(())
 }
 
