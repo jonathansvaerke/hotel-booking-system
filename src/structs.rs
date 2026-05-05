@@ -1,5 +1,3 @@
-#[derive(Debug)]
-
 pub struct Guest {
     pub first_name: String,
     pub last_name: String,
