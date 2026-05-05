@@ -97,7 +97,7 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
 
     match conn.execute(
         "INSERT INTO bookings (room_id, guest_id, start_date, end_date) VALUES (?1, ?2, ?3, ?4)",
-        (&room_id, &guest_id, &start_date, &end_date), // Tuples are being used here because, the data have different types.
+        (&room_id, &guest_id, &start_date, &end_date), // Tuples are being used here because, the data slots have different types.
     ) {
         Ok(_) => println!("Booking created successfully"),
         Err(e) => println!("Error creating booking: {}", e),
