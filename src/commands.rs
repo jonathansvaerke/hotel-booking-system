@@ -109,6 +109,7 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
 pub fn remove_booking(_conn: &Connection) -> Result<()> {
     /* Hent alle datoer på EN gæsts bookinger på ET rum. Sammen med datoerne, print booking id.
     Derefter kan brugeren indtaste den korrekte booking id. Og databasen sletter booking med det id. */
+    println!("This function is not yet operational");
     Ok(())
 }
 
