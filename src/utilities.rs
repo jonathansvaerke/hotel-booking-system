@@ -10,13 +10,16 @@ pub fn get_string(command: &str) -> String {
 }
 
 pub fn get_int(command: &str) -> u32 {
-    let mut input = String::new();
-    eprint!("{}", command);
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
-    input
-        .trim()
-        .parse::<u32>()
-        .expect("Failed integer conversion")
+    loop {
+        let mut input = String::new();
+        eprint!("{}", command);
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        match input.trim().parse::<u32>() {
+            Ok(num) => return num,
+            Err(_e) => println!("Could not convert int. Please try again"),
+        }
+    }
 }
