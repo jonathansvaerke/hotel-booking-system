@@ -2,6 +2,7 @@ use rusqlite::{Connection, Result};
 
 use crate::{
     query::{query_bookings, query_guests, query_rooms},
+    structs::Booking,
     utilities::{get_int, get_string},
 };
 
@@ -91,9 +92,38 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
         |row| row.get(0),
     )?; // This could be made better by using a match-statement. Same with the above. Remember to add case Ok(0) for 'user not found error'
 
-    println!("Date format: <YEAR-MM-DD>");
-    let start_date = get_string("    Start date > ");
-    let end_date = get_string("    End date > ");
+    let (start_date, end_date) = loop {
+        println!("Date format: <YEAR-MM-DD>");
+        let start = get_string("    Start date > ");
+        let end = get_string("    End date > ");
+        if start < end {
+            break (start, end);
+        }
+        println!("    Start date must be before end date");
+    };
+
+    let mut stmt = conn.prepare("SELECT start_date, end_date FROM bookings WHERE room_id = ?1")?;
+    let booking_iter = stmt.query_map([room_id], |row| {
+        Ok(Booking {
+            room_id: 0,
+            guest_id: 0,
+            start_date: row.get(0)?,
+            end_date: row.get(1)?,
+        })
+    })?;
+
+    for booking in booking_iter {
+        let booking = booking?;
+        // This check if the booking is valid
+        if end_date.as_str() <= booking.start_date.as_str()
+            || start_date.as_str() >= booking.end_date.as_str()
+        {
+            continue; // The booking is alright
+        } else {
+            println!("This booking intervenes with an existing booking");
+            return Ok(());
+        }
+    }
 
     match conn.execute(
         "INSERT INTO bookings (room_id, guest_id, start_date, end_date) VALUES (?1, ?2, ?3, ?4)",
