@@ -105,6 +105,7 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
     let mut stmt = conn.prepare("SELECT start_date, end_date FROM bookings WHERE room_id = ?1")?;
     let booking_iter = stmt.query_map([room_id], |row| {
         Ok(Booking {
+            id: 0,
             room_id: 0,
             guest_id: 0,
             start_date: row.get(0)?,
@@ -137,10 +138,62 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
     Ok(())
 }
 
-pub fn remove_booking(_conn: &Connection) -> Result<()> {
+pub fn remove_booking(conn: &Connection) -> Result<()> {
     /* Hent alle datoer på EN gæsts bookinger på ET rum. Sammen med datoerne, print booking id.
     Derefter kan brugeren indtaste den korrekte booking id. Og databasen sletter booking med det id. */
-    println!("This function is not yet operational");
+    //println!("This function is not yet operational");
+
+    let room_number = get_int("    Room number > ");
+    let room_id: i64 = conn.query_row(
+        "SELECT id FROM rooms WHERE number = ?1",
+        [room_number],
+        |row| row.get(0),
+    )?; // In this part of the function, one could also ask whether to use email or phone number. Like in removeguest.
+
+    let guest_phone = get_string("    Guest phone number > ");
+    let guest_id: i64 = conn.query_row(
+        "SELECT id FROM guests WHERE phone = ?1",
+        [guest_phone],
+        |row| row.get(0),
+    )?;
+
+    let mut stmt = conn.prepare(
+        "SELECT id, start_date, end_date FROM bookings WHERE room_id = ?1 AND guest_id = ?2",
+    )?;
+
+    let booking_iter = stmt.query_map([&room_id, &guest_id], |row| {
+        Ok(Booking {
+            id: row.get(0)?,
+            room_id: 0,
+            guest_id: 0,
+            start_date: row.get(1)?,
+            end_date: row.get(2)?,
+        })
+    })?;
+
+    // At this point, one could check whether booking_iter.len() = 1, then just go ahead and delete that booking. Otherwise do what's underneath this text.
+
+    for booking in booking_iter {
+        let booking = booking?;
+        println!(
+            "    id: {} | Start: {} | End: {}",
+            booking.id, booking.start_date, booking.end_date
+        );
+    }
+
+    println!("Enter the booking-id, for the booking that should be removed.");
+    loop {
+        let id = get_int("    id > ");
+        match conn.execute("DELETE FROM bookings WHERE id = ?1", [id]) {
+            Ok(0) => println!("Could not find booking with that id"),
+            Ok(_) => {
+                println!("Booking removed succesfully");
+                break;
+            }
+            Err(e) => println!("Error while removing booking: {}", e),
+        }
+    }
+
     Ok(())
 }
 

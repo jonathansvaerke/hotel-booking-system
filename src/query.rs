@@ -52,7 +52,7 @@ pub fn query_bookings(conn: &Connection) -> Result<()> {
         conn.prepare("SELECT id, room_id, guest_id, start_date, end_date FROM bookings")?;
     let booking_iter = stmt.query_map([], |row| {
         Ok(Booking {
-            //id: row.get(0)?,
+            id: 0, /*row.get(0)?*/
             room_id: row.get(1)?,
             guest_id: row.get(2)?,
             start_date: row.get(3)?,
