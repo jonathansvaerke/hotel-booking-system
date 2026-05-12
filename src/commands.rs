@@ -117,6 +117,7 @@ pub fn add_booking(conn: &Connection) -> Result<()> {
         // This check if the booking is valid
         if end_date.as_str() <= booking.start_date.as_str()
             || start_date.as_str() >= booking.end_date.as_str()
+        // This checks whether the new booking ends before the registered or starts after the registered
         {
             continue; // The booking is alright
         } else {
